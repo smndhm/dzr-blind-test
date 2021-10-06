@@ -1,18 +1,43 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <swiper
+    v-if="blindTests"
+    :slides-per-view="2"
+    :space-between="50"
+    :loop="true"
+    :centered-slides="true"
+    :initial-slide="1"
+    :preload-images="false"
+    :lazy="true"
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
+  >
+    <swiper-slide v-for="(blindTest, index) in blindTests" :key="blindTest.id">
+      <playlist v-model:playlist="blindTests[index]"></playlist>
+    </swiper-slide>
+  </swiper>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper.min.css';
+import Deezer from '@/services/deezer.service';
+import Playlist from '@/components/Playlist.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    Swiper,
+    SwiperSlide,
+    Playlist,
+  },
+  data() {
+    return {
+      blindTests: null,
+    };
+  },
+  async beforeCreate() {
+    const dzr = new Deezer();
+    this.blindTests = await dzr.getBlindTests();
   },
 };
 </script>
