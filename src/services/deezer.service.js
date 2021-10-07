@@ -16,6 +16,11 @@ module.exports = class Deezer {
     return data;
   }
 
+  async getBlindTest(playlistId) {
+    const data = await this.api(`playlist/${playlistId}`);
+    return data;
+  }
+
   async api(path, params) {
     const url = urljoin(
       this.baseUrl,

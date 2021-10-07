@@ -5,13 +5,15 @@
     :space-between="50"
     :loop="true"
     :centered-slides="true"
-    :initial-slide="1"
-    :preload-images="false"
-    :lazy="true"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
+    :hash-navigation="{
+      watchState: true,
+    }"
   >
-    <swiper-slide v-for="(blindTest, index) in blindTests" :key="blindTest.id">
+    <swiper-slide
+      :data-hash="index"
+      v-for="(blindTest, index) in blindTests"
+      :key="blindTest.id"
+    >
       <playlist v-model:playlist="blindTests[index]"></playlist>
     </swiper-slide>
   </swiper>
@@ -19,7 +21,6 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper.min.css';
 import Deezer from '@/services/deezer.service';
 import Playlist from '@/components/Playlist.vue';
 

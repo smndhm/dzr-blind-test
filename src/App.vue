@@ -7,6 +7,7 @@
 
 <script>
 import 'normalize.css';
+import 'swiper/swiper.min.css';
 
 export default {
   name: 'App',
