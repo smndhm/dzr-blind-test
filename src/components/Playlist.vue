@@ -4,6 +4,7 @@
   /></router-link>
   <h3>
     <router-link
+      class="outline"
       :to="`/playlist/${playlist.id}`"
       v-html="playlist.title"
     ></router-link>
@@ -23,6 +24,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
 .cover {
   max-width: 100%;
   height: auto;

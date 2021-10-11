@@ -1,22 +1,28 @@
 <template>
-  <swiper
-    v-if="blindTests"
-    :slides-per-view="2"
-    :space-between="50"
-    :loop="true"
-    :centered-slides="true"
-    :hash-navigation="{
-      watchState: true,
-    }"
-  >
-    <swiper-slide
-      :data-hash="index"
-      v-for="(blindTest, index) in blindTests"
-      :key="blindTest.id"
+  <section v-if="blindTests">
+    <h2>Choose a playlist to play with&nbsp;:</h2>
+    <swiper
+      :slides-per-view="2"
+      :space-between="50"
+      :loop="true"
+      :centered-slides="true"
+      :hash-navigation="{
+        watchState: true,
+      }"
     >
-      <playlist v-model:playlist="blindTests[index]"></playlist>
-    </swiper-slide>
-  </swiper>
+      <swiper-slide
+        :data-hash="index"
+        v-for="(blindTest, index) in blindTests"
+        :key="blindTest.id"
+      >
+        <playlist v-model:playlist="blindTests[index]"></playlist>
+      </swiper-slide>
+    </swiper>
+    <!-- <a href="">Play</a> -->
+  </section>
+  <footer>
+    <p>Inspired by some festive nights 🥃</p>
+  </footer>
 </template>
 
 <script>
@@ -42,3 +48,14 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+h2 {
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+footer p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+</style>

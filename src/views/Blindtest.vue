@@ -71,6 +71,7 @@ export default {
         this.setSong();
         this.blindtest.audio.player.play();
         this.blindtest.step = 'playing';
+        this.button = 'See answer';
       }
     },
   },
