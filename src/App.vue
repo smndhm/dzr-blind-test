@@ -19,7 +19,6 @@ export default {
 html,
 body {
   height: 100%;
-  // overflow: hidden;
 }
 
 body {
@@ -31,7 +30,17 @@ body {
 #app {
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+  height: 100%;
+  & > header,
+  & > footer {
+    flex-shrink: 0;
+  }
+  & > section {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 a.outline {

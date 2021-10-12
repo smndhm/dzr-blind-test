@@ -1,24 +1,28 @@
 <template>
   <section v-if="blindTests">
-    <h2>Choose a playlist to play with&nbsp;:</h2>
-    <swiper
-      :slides-per-view="2"
-      :space-between="50"
-      :loop="true"
-      :centered-slides="true"
-      :hash-navigation="{
-        watchState: true,
-      }"
-    >
-      <swiper-slide
-        :data-hash="index"
-        v-for="(blindTest, index) in blindTests"
-        :key="blindTest.id"
+    <div>
+      <h2>Choose a playlist to play with&nbsp;:</h2>
+      <swiper
+        :slides-per-view="2"
+        :space-between="50"
+        :loop="true"
+        :centered-slides="true"
+        :breakpoints="{
+          900: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        }"
       >
-        <playlist v-model:playlist="blindTests[index]"></playlist>
-      </swiper-slide>
-    </swiper>
-    <!-- <a href="">Play</a> -->
+        <swiper-slide
+          :data-hash="index"
+          v-for="(blindTest, index) in blindTests"
+          :key="blindTest.id"
+        >
+          <playlist v-model:playlist="blindTests[index]"></playlist>
+        </swiper-slide>
+      </swiper>
+    </div>
   </section>
   <footer>
     <p>Inspired by some festive nights 🥃</p>
@@ -54,8 +58,10 @@ h2 {
   font-size: 2rem;
   margin: 2rem 0;
 }
-footer p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
+footer {
+  p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
 }
 </style>
