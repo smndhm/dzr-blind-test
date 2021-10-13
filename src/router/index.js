@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: '/playlist/:id',
-    name: 'About',
+    name: 'Blindtest',
     component: () => import('@/views/Blindtest.vue'),
   },
   {

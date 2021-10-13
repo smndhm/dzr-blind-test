@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="{ blindtest: this.$route.name === 'Blindtest' }">
     <h1><router-link class="outline" to="/">Blind Test</router-link></h1>
   </header>
   <router-view />
@@ -61,5 +61,10 @@ h1 {
   margin: 0;
   font-size: 8rem;
   line-height: 1;
+}
+header.blindtest {
+  h1 {
+    font-size: 4rem;
+  }
 }
 </style>
