@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dzr-blind-test/precache-manifest.c2a0a14132a3e80e9adb4f318054a8d0.js"
+  "/dzr-blind-test/precache-manifest.a800c97d6054eb0f1c37ef3f9e437e14.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "dzr-blind-test"});
