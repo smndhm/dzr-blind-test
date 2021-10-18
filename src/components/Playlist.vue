@@ -25,8 +25,8 @@ export default {
 
 <style lang="scss" scoped>
 h3 {
-  font-size: 1rem;
-  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  margin: 1rem 0;
 }
 
 .cover {

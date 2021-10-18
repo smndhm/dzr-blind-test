@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ blindtest: this.$route.name === 'Blindtest' }">
+  <header>
     <h1><router-link class="outline" to="/">Blind Test</router-link></h1>
   </header>
   <router-view />
@@ -15,14 +15,19 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 html,
 body {
   height: 100%;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: 'Oswald', sans-serif;
+  font-weight: 400;
   text-align: center;
   font-size: 1.6rem;
 }
@@ -59,10 +64,12 @@ a.outline {
 <style lang="scss" scoped>
 h1 {
   margin: 0;
-  font-size: 8rem;
+  font-size: 15rem;
   line-height: 1;
+  font-weight: 700;
+  transition: 400ms ease;
 }
-header.blindtest {
+body.blindtest {
   h1 {
     font-size: 4rem;
   }

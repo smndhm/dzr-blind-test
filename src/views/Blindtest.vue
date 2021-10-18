@@ -76,6 +76,8 @@ export default {
     },
   },
   async beforeCreate() {
+    document.body.classList.add('blindtest');
+
     const dzr = new Deezer();
     this.playlist = await dzr.getBlindTest(this.$route.params.id);
     const tracks = this.playlist.tracks.data;

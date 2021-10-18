@@ -25,7 +25,7 @@
     </div>
   </section>
   <footer>
-    <p>Inspired by some festive nights 🥃</p>
+    <p>Inspired by some drunken evening 🥃</p>
   </footer>
 </template>
 
@@ -47,6 +47,7 @@ export default {
     };
   },
   async beforeCreate() {
+    document.body.classList.remove('blindtest');
     const dzr = new Deezer();
     this.blindTests = await dzr.getBlindTests();
   },
@@ -55,13 +56,13 @@ export default {
 
 <style lang="scss" scoped>
 h2 {
-  font-size: 2rem;
-  margin: 2rem 0;
+  font-size: 3rem;
+  margin: 3rem 0;
 }
 footer {
   p {
     margin: 0.5rem 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 </style>
