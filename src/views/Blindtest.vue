@@ -1,24 +1,36 @@
 <template>
-  <div id="progress" :style="`width:${blindtest.audio.progress}%`"></div>
+  <div
+    id="progress"
+    :style="
+      `
+      width:${blindtest.audio.progress}%;
+      background-color: hsl(210, 100%, ${100 - blindtest.audio.progress / 4}%);
+      `
+    "
+  ></div>
   <section v-if="playlist">
     <h2 v-html="playlist.title"></h2>
     <p v-html="playlist.description"></p>
     <div>
-      <h4
-        v-show="blindtest.step === 'answer'"
-        v-html="blindtest.song.title"
-      ></h4>
-      <h5
-        v-show="blindtest.step === 'answer'"
-        v-html="blindtest.song.artist.name"
-      ></h5>
-      <h6
-        v-show="blindtest.step === 'answer'"
-        v-html="blindtest.song.album.title"
-      ></h6>
+      <div>
+        <h4
+          v-show="blindtest.step === 'answer'"
+          v-html="blindtest.song.title"
+        ></h4>
+        <h5
+          v-show="blindtest.step === 'answer'"
+          v-html="blindtest.song.artist.name"
+        ></h5>
+      </div>
     </div>
-    <button @click="next" v-if="blindtest.audio.ready" v-html="button"></button>
   </section>
+  <footer>
+    <button
+      @click="next"
+      :disabled="!blindtest.audio.ready"
+      v-html="button"
+    ></button>
+  </footer>
 </template>
 
 <script>
@@ -96,7 +108,33 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: aqua;
-  height: 2px;
+  height: 100%;
+  z-index: -1;
+}
+footer {
+  padding: 1rem;
+  button {
+    position: relative;
+    margin: auto;
+    padding: 1rem;
+    display: block;
+    width: calc(100% - 2rem);
+    background: transparent;
+    border: none;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      border: 3px solid;
+      transform: skew(30deg);
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 </style>
