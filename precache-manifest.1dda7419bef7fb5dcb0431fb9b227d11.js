@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e09a019d1d01cb1281bd",
+    "revision": "662d2bf43a7627925f4e",
     "url": "/dzr-blind-test/css/app.c3cee4f0.css"
   },
   {
-    "revision": "d25c0448f6c52c1c1e9c",
-    "url": "/dzr-blind-test/css/chunk-4c5bf7ac.cf319a09.css"
+    "revision": "ca68d0ce4e22235c79f3",
+    "url": "/dzr-blind-test/css/chunk-2569ec30.05e0840b.css"
   },
   {
     "revision": "5c9f761ad1296b613f72",
     "url": "/dzr-blind-test/css/chunk-vendors.85e8548f.css"
   },
   {
-    "revision": "b01c1976d5d09186e9217a51df08c98f",
+    "revision": "8d340dbabc61d869de1f26ce3b0baac2",
     "url": "/dzr-blind-test/index.html"
   },
   {
-    "revision": "e09a019d1d01cb1281bd",
-    "url": "/dzr-blind-test/js/app.430c3e77.js"
+    "revision": "662d2bf43a7627925f4e",
+    "url": "/dzr-blind-test/js/app.fead6246.js"
   },
   {
-    "revision": "d25c0448f6c52c1c1e9c",
-    "url": "/dzr-blind-test/js/chunk-4c5bf7ac.ef8427f8.js"
+    "revision": "ca68d0ce4e22235c79f3",
+    "url": "/dzr-blind-test/js/chunk-2569ec30.9bdd4965.js"
   },
   {
     "revision": "5c9f761ad1296b613f72",
